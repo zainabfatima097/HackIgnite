@@ -80,9 +80,10 @@ const Hero = () => {
         
         {/* Stats Grid */}
         <div ref={statsRef} className="stats-grid">
+          {/* Original Stats */}
           <div className="stat-item">
             <div className="stat-card">
-              <div className="stat-number">10</div>
+              <div className="stat-number">24</div>
               <div className="stat-label">Hours</div>
             </div>
           </div>
@@ -96,19 +97,35 @@ const Hero = () => {
           
           <div className="stat-item">
             <div className="stat-card">
-              <div className="stat-number">Rs. 30K+</div>
+              <div className="stat-number">$10K+</div>
               <div className="stat-label">In Prizes</div>
             </div>
           </div>
           
           <div className="stat-item">
             <div className="stat-card">
-              <div className="stat-number">40+</div>
+              <div className="stat-number">30+</div>
               <div className="stat-label">Projects</div>
+            </div>
+          </div>
+          
+          <div className="stat-item">
+            <div className="stat-card">
+              <div className="stat-number">1:1</div>
+              <div className="stat-label">Mentorship</div>
+            </div>
+          </div>
+          
+          <div className="stat-item">
+            <div className="stat-card">
+              <div className="stat-number">100%</div>
+              <div className="stat-label">Fun</div>
             </div>
           </div>
         </div>
       </div>
+      
+      
     </section>
   );
 };

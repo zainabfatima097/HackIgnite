@@ -6,13 +6,10 @@
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 400;
-}
-
-h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
-  font-family: 'Urbanist', sans-serif;
-  font-weight: 700;
+  font-family: 'Poppins', z-index;
+  color: #2d3748;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Navbar Styles */
@@ -98,30 +95,20 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
   margin: 3px 0;
   transition: 0.3s;
 }
-/*HeroSection*/
+
+/* Hero Section Styles */
 .hero-section {
-  min-height: 110vh;
+  min-height: 160vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 80px 1rem 2rem; /* Changed from 2rem to 80px */
+  padding: 80px 1rem 2rem; /* Added top padding to prevent navbar overlap */
   overflow: hidden;
-}
-
-.hero-background {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-}
-
-.hero-gradient-overlay {
-  position: absolute;
-  inset: 0;
   background: linear-gradient(135deg, 
-    rgba(99, 102, 241, 0.1) 0%, 
-    rgba(139, 92, 246, 0.1) 50%, 
-    rgba(236, 72, 153, 0.1) 100%
+    #6366f1 0%, 
+    #8b5cf6 50%, 
+    #ec4899 100%
   );
 }
 
@@ -131,25 +118,59 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
   text-align: center;
   max-width: 1200px;
   width: 100%;
+  padding: 0 1rem;
 }
 
-/* Typography */
+/* Optional: Add a dark overlay for better text contrast */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.7); /* Dark overlay */
+  z-index: 1;
+}
+
+/* College Logo */
+.college-logo-container {
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.college-logo {
+  height: 120px;
+  width: auto;
+  max-width: 300px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+/* Main Heading */
 .main-heading {
   font-family: 'Montserrat', sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
   color: white;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.1;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .accent-text {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: none;
 }
 
+/* Subtitle */
 .subtitle {
   font-size: 1.25rem;
   color: #e2e8f0;
@@ -158,20 +179,25 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Buttons */
+/* CTA Buttons */
 .cta-buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 3;
 }
 
 .primary-button {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1e293b;
   border: none;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
@@ -182,123 +208,79 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 .primary-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
 .secondary-button {
   background: transparent;
   color: white;
-  border: 2px solid #6366f1;
+  border: 2px solid white;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .secondary-button:hover {
-  background: #6366f1;
+  background: white;
+  color: #6366f1;
   transform: translateY(-2px);
 }
 
-.button-icon {
-  font-weight: 700;
-}
-
-/* Update the stats grid in your App.css */
+/* Stats Grid */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns instead of 2 */
-  gap: 1rem; /* Reduced gap */
-  max-width: 970px; /* Increased max-width */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.stat-item {
+  opacity: 0; /* For animation */
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 1rem;
-  padding: 1.5rem 1rem; /* Reduced padding */
+  padding: 1.5rem 1rem;
   transition: all 0.3s ease;
   text-align: center;
-  height: 100%; /* Ensure equal height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .stat-number {
-  font-size: 2rem; /* Slightly smaller font */
+  font-size: 2rem;
   font-weight: 800;
   color: white;
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .stat-label {
-  font-size: 0.8rem; /* Slightly smaller font */
-  color: #cbd5e1;
+  font-size: 0.8rem;
+  color: #e2e8f0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-    max-width: 600px;
-  }
-}
-
-@media (max-width: 640px) {
-  .stats-grid {
-    grid-template-columns: 1fr; /* 1 column on mobile */
-    max-width: 300px;
-  }
-  
-  .stat-card {
-    padding: 1.25rem 0.75rem;
-  }
-  
-  .stat-number {
-    font-size: 1.75rem;
-  }
-}
-
-/* Additional positioning adjustments */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 1rem;
-}
-
-/* Ensure proper spacing */
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 2.5rem; /* Reduced margin */
-  flex-wrap: wrap;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  color: #e2e8f0;
-  margin-bottom: 2.5rem; /* Reduced margin */
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
 }
 
 /* Scroll Indicator */
@@ -307,11 +289,12 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 3;
 }
 
 .scroll-button {
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -321,6 +304,7 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
   cursor: pointer;
   transition: all 0.3s ease;
   color: white;
+  backdrop-filter: blur(10px);
 }
 
 .scroll-button:hover {
@@ -334,7 +318,18 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+}
+
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 70px 1rem 2rem; /* Adjusted for mobile */
+  }
+  
   .main-heading {
     font-size: 2.5rem;
   }
@@ -342,6 +337,11 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
   .subtitle {
     font-size: 1.1rem;
     margin-bottom: 2rem;
+  }
+  
+  .college-logo {
+    height: 100px;
+    max-width: 250px;
   }
   
   .cta-buttons {
@@ -355,19 +355,6 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
     max-width: 300px;
     justify-content: center;
   }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-    max-width: 300px;
-  }
-  
-  .stat-card {
-    padding: 1.5rem 1rem;
-  }
-  
-  .stat-number {
-    font-size: 2rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -378,7 +365,33 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
   .subtitle {
     font-size: 1rem;
   }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+  
+  .college-logo {
+    height: 80px;
+    max-width: 200px;
+  }
+  
+  .stat-card {
+    padding: 1.25rem 0.75rem;
+  }
+  
+  .stat-number {
+    font-size: 1.75rem;
+  }
 }
+
+/* Animation delays for stats */
+.stat-item:nth-child(1) { animation-delay: 0.1s; }
+.stat-item:nth-child(2) { animation-delay: 0.2s; }
+.stat-item:nth-child(3) { animation-delay: 0.3s; }
+.stat-item:nth-child(4) { animation-delay: 0.4s; }
+.stat-item:nth-child(5) { animation-delay: 0.5s; }
+.stat-item:nth-child(6) { animation-delay: 0.6s; }
 
 /* About Section */
 .about {
@@ -400,8 +413,8 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
 }
 
 .section-title-accent {
-  color: #3838daff;
-} 
+  color: #6366f1;
+}
 
 .about-content {
   display: grid;
@@ -2061,16 +2074,3 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
 .footer-links:nth-child(2) { animation-delay: 0.2s; }
 .footer-links:nth-child(3) { animation-delay: 0.3s; }
 .footer-contact { animation-delay: 0.4s; }
-
-.text-type {
-  display: inline-block;
-  white-space: pre-wrap;
-}
-.text-type__cursor {
-  margin-left: 0.25rem;
-  display: inline-block;
-  opacity: 1;
-}
-.text-type__cursor--hidden {
-  display: none;
-}

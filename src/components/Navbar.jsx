@@ -7,9 +7,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <div className="nav-logo">
-          <i className="fas fa-fire"></i>
-          <span>Hack<span className="logo-accent">Ignite</span></span>
+        {/* College Banner - Replace with your actual banner image */}
+        <div className="college-banner.jpeg">
+          <img 
+            src="college-banner.jpeg" // Replace with your college banner path
+            alt="College Name Banner"
+            className="banner-image"
+          />
         </div>
 
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
