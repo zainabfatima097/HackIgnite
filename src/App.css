@@ -4,13 +4,30 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --font-heading: 'Audiowide', sans-serif;
+  --font-body: 'Michroma', sans-serif;
+}
+
+.main-heading {
+  font-weight: 400; /* Audiowide has consistent weight */
+  letter-spacing: 2px;
+}
 
 body {
-  font-family: 'Poppins', Montserrat;
+  font-family: var(--font-body);
+  font-weight: 400;
   color: #2d3748;
   line-height: 1.6;
   overflow-x: hidden;
 }
+h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+
 /* Updated Color Variables */
 :root {
   --color-dark: #000000;     /* Pure black */
@@ -162,6 +179,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top:2.5rem;
   margin-bottom: 2.5rem;
   width: 100%;
   animation: float 3s ease-in-out infinite;

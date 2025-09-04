@@ -18,7 +18,7 @@ const About = () => {
             
             <div className="about-stats">
               <div className="about-stat">
-                <div className="about-stat-number">24</div>
+                <div className="about-stat-number">10</div>
                 <div className="about-stat-label">Hours of Coding</div>
               </div>
               <div className="about-stat">
@@ -26,7 +26,7 @@ const About = () => {
                 <div className="about-stat-label">Technical Workshops</div>
               </div>
               <div className="about-stat">
-                <div className="about-stat-number">5</div>
+                <div className="about-stat-number">3</div>
                 <div className="about-stat-label">Themed Tracks</div>
               </div>
             </div>

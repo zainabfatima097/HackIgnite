@@ -100,7 +100,7 @@ const Hero = () => {
         <div ref={statsRef} className="stats-grid">
           <div className="stat-item">
             <div className="stat-card">
-              <div className="stat-number">24</div>
+              <div className="stat-number">10</div>
               <div className="stat-label">Hours</div>
             </div>
           </div>
@@ -114,7 +114,7 @@ const Hero = () => {
           
           <div className="stat-item">
             <div className="stat-card">
-              <div className="stat-number">$10K+</div>
+              <div className="stat-number">Rs.30K+</div>
               <div className="stat-label">In Prizes</div>
             </div>
           </div>
@@ -141,7 +141,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Scroll Indicator */}
       <div className="scroll-indicator">
         <button 
