@@ -3,15 +3,23 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 const Hero = () => {
+  const logoRef = useRef(null);
   const headingRef = useRef(null);
   const subtitleRef = useRef(null);
   const buttonsRef = useRef(null);
   const statsRef = useRef(null);
 
   useEffect(() => {
-    if (headingRef.current && subtitleRef.current && buttonsRef.current && statsRef.current) {
+    if (logoRef.current && headingRef.current && subtitleRef.current && buttonsRef.current && statsRef.current) {
       const tl = gsap.timeline();
       
+      // Animate logo first
+      tl.fromTo(logoRef.current, 
+        { y: 30, opacity: 0, scale: 0.8 },
+        { y: 0, opacity: 1, scale: 1, duration: 1, ease: "power3.out" }
+      );
+      
+      // Then animate the rest
       tl.fromTo(headingRef.current, 
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
@@ -51,6 +59,15 @@ const Hero = () => {
       </div>
       
       <div className="hero-content">
+        {/* Logo - Add this above the heading */}
+        <div ref={logoRef} className="logo-container">
+          <img 
+            src="/logo.png" 
+            alt="HackIgnite Logo"
+            className="hero-logo"
+          />
+        </div>
+        
         {/* Main Heading */}
         <h1 ref={headingRef} className="main-heading">
           Hack<span className="accent-text">Ignite</span>
@@ -58,8 +75,9 @@ const Hero = () => {
         
         {/* Subtitle */}
         <p ref={subtitleRef} className="subtitle">
-          Ignite your creativity, code the future. Join the annual hackathon at our college.
-        </p>
+          Ignite your creativity, code the future.
+          Join the very First Women-only Hackathon at SWCET, Khairtabad.
+          </p>
         
         {/* Call-to-Action Buttons */}
         <div ref={buttonsRef} className="cta-buttons">
@@ -80,7 +98,6 @@ const Hero = () => {
         
         {/* Stats Grid */}
         <div ref={statsRef} className="stats-grid">
-          {/* Original Stats */}
           <div className="stat-item">
             <div className="stat-card">
               <div className="stat-number">24</div>
@@ -125,7 +142,16 @@ const Hero = () => {
         </div>
       </div>
       
-      
+      {/* Scroll Indicator */}
+      <div className="scroll-indicator">
+        <button 
+          onClick={() => scrollToSection('about')}
+          className="scroll-button"
+          aria-label="Scroll to next section"
+        >
+          <span className="scroll-arrow">↓</span>
+        </button>
+      </div>
     </section>
   );
 };
