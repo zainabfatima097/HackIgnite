@@ -34,7 +34,7 @@ const About = () => {
           
           <div className="about-card">
             <div className="about-card-image">
-              <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" 
+              <img src="https://www.google.com/imgres?q=hackathon%20women%20images&imgurl=https%3A%2F%2Ftechnical.ly%2Fwp-content%2Fuploads%2F2013%2F03%2Fladyhacks.jpg&imgrefurl=https%3A%2F%2Ftechnical.ly%2Fdiversity-equity-inclusion%2Fladyhacks-7-projects-from-phillys-first-women-only-hackathon%2F&docid=Qe75MU7_VEijaM&tbnid=PbbdPQNO_icc4M&vet=12ahUKEwiWhdvmsr-PAxXgUGwGHXMJFDEQM3oECB8QAA..i&w=800&h=533&hcb=2&ved=2ahUKEwiWhdvmsr-PAxXgUGwGHXMJFDEQM3oECB8QAA" 
                    alt="Hackathon participants collaborating" />
             </div>
             <div className="about-card-content">
