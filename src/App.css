@@ -1,4 +1,6 @@
 /* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -173,7 +175,38 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
   width: 100%;
   padding: 0 1rem;
 }
+.main-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900; /* Use the heaviest weight for impact */
+  letter-spacing: 3px; /* Increased letter spacing for tech feel */
+  text-transform: uppercase;
+  font-size: 4rem; /* Slightly larger */
+  text-shadow: 
+    0 0 10px rgba(53, 51, 205, 0.7),
+    0 0 20px rgba(53, 51, 205, 0.5),
+    0 0 30px rgba(53, 51, 205, 0.3); /* Multi-layer glow for tech effect */
+  margin-bottom: 1.5rem;
+}
 
+/* Add a digital pulse animation */
+@keyframes digitalPulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(53, 51, 205, 0.7),
+      0 0 20px rgba(53, 51, 205, 0.5),
+      0 0 30px rgba(53, 51, 205, 0.3);
+  }
+  50% {
+    text-shadow: 
+      0 0 15px rgba(53, 51, 205, 0.8),
+      0 0 25px rgba(53, 51, 205, 0.6),
+      0 0 35px rgba(53, 51, 205, 0.4);
+  }
+}
+
+.main-heading {
+  animation: digitalPulse 3s ease-in-out infinite;
+}
 /* Logo Styles */
 .logo-container {
   display: flex;
@@ -211,14 +244,12 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
 
 /* Subtitle */
 .subtitle {
-  font-size: 1.25rem;
-  color: #e2e8f0;
-  margin-bottom: 3rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  text-shadow: 0 0 10px rgba(53, 51, 205, 0.4);
 }
 
 /* CTA Buttons */
@@ -2106,3 +2137,83 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
 .footer-links:nth-child(2) { animation-delay: 0.2s; }
 .footer-links:nth-child(3) { animation-delay: 0.3s; }
 .footer-contact { animation-delay: 0.4s; }
+
+.main-heading, 
+.section-title,
+.about-card-content h3,
+.timeline-title,
+.prize-track h3,
+.special-title,
+.sponsors-title,
+.faq-category h3,
+.footer-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Specific styling for the main hero heading */
+.main-heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(53, 51, 205, 0.5);
+}
+
+/* Specific styling for section titles */
+.section-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* If you want to add a gradient to the main heading */
+.main-heading .accent-text {
+  background: linear-gradient(135deg, #3533CD 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* For smaller headings in cards and other sections */
+.about-card-content h3,
+.timeline-title,
+.prize-track h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.special-title,
+.sponsors-title {
+  font-size: 2rem;
+}
+
+.faq-category h3 {
+  font-size: 1.5rem;
+}
+
+.footer-title {
+  font-size: 1.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+}

@@ -76,7 +76,6 @@ const Hero = () => {
         {/* Subtitle */}
         <p ref={subtitleRef} className="subtitle">
           Ignite your creativity, code the future.
-          Join the very First Women-only Hackathon at SWCET, Khairtabad.
           </p>
         
         {/* Call-to-Action Buttons */}
