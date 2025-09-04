@@ -40,19 +40,18 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
   --color-light-gray: #e2e8f0;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.95); /* Black with transparency */
+  background: rgba(0, 0, 0, 1); /* Black with transparency */
   backdrop-filter: blur(10px);
   padding: 0.8rem 0;
   z-index: 1000;
   box-shadow: 0 2px 20px rgba(53, 51, 205, 0.2);
   border-bottom: 1px solid rgba(53, 51, 205, 0.3);
 }
-
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -60,19 +59,21 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%; /* Make container fill navbar height */
 }
 
 .college-banner {
   display: flex;
   align-items: center;
+  margin-right: auto; /* This pushes everything else to the right */
 }
 
 .banner-image {
-  height: 45px;
+  height: 80px; /* Increased from 45px to 80px */
   width: auto;
   object-fit: contain;
+  transition: all 0.3s ease; /* Smooth transition for any changes */
 }
-
 .nav-menu {
   display: flex;
   align-items: center;
@@ -300,12 +301,11 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(53, 51, 205, 0.3);
 }
-
-/* Stats Grid */
+/* Stats Grid - Minimalist Version */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 2rem; /* Increased gap */
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -315,24 +315,22 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
 }
 
 .stat-card {
-  background: rgba(53, 51, 205, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(53, 51, 205, 0.3);
-  border-radius: 1rem;
+  background: transparent; /* Completely transparent */
+  backdrop-filter: none;
+  border: none;
   padding: 1.5rem 1rem;
   transition: all 0.3s ease;
   text-align: center;
   height: 100%;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
-  background: rgba(53, 51, 205, 0.15);
-  box-shadow: 0 8px 25px rgba(53, 51, 205, 0.2);
 }
 
 .stat-number {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--color-light);
   margin-bottom: 0.5rem;
@@ -340,8 +338,8 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
 }
 
 .stat-label {
-  font-size: 0.8rem;
-  color: #e2e8f0;
+  font-size: 0.9rem;
+  color: #a0aec0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -459,12 +457,19 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
 /* About Section */
 .about {
   padding: 6rem 2rem;
-  background: #f7fafc;
+  background: linear-gradient(135deg, var(--color-dark) 0%, #1a1a2e 100%); /* Fixed gradient */
+  position: relative;
+  color: #e2e8f0; /* Light text color for contrast */
+  min-height: 100vh; /* Added to match hero section styling */
+  display: flex;
+  align-items: center;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Ensure content is above any potential overlays */
 }
 
 .section-title {
@@ -473,6 +478,7 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 3rem;
+  color: #e2e8f0; /* Light color for dark background */
 }
 
 .section-title-accent {
@@ -490,6 +496,7 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
   line-height: 1.8;
+  color: #e2e8f0; /* Light color for dark background */
 }
 
 .about-stats {
@@ -502,9 +509,18 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
 .about-stat {
   text-align: center;
   padding: 1.5rem;
-  background: white;
+  background: rgba(45, 45, 65, 0.7); /* Semi-transparent dark background */
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  border: 1px solid rgba(53, 51, 205, 0.3); /* Subtle border */
+  color: #e2e8f0; /* Light text color */
+  transition: all 0.3s ease;
+}
+
+.about-stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(53, 51, 205, 0.3);
 }
 
 .about-stat-number {
@@ -512,18 +528,28 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
   font-weight: 700;
   color: #6366f1;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.5); /* Glow effect */
 }
 
 .about-stat-label {
   font-size: 0.9rem;
-  color: #718096;
+  color: #cbd5e1; /* Lighter gray for better contrast */
+  font-weight: 500;
 }
 
 .about-card {
-  background: white;
+  background: rgba(45, 45, 65, 0.7); /* Semi-transparent dark background */
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  border: 1px solid rgba(53, 51, 205, 0.3); /* Subtle border */
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(53, 51, 205, 0.3);
 }
 
 .about-card-image img {
@@ -534,12 +560,14 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
 
 .about-card-content {
   padding: 2rem;
+  color: #e2e8f0; /* Light text color */
 }
 
 .about-card-content h3 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #2d3748;
+  color: #e2e8f0; /* Light text color */
+  font-family: 'Orbitron', sans-serif; /* Techy font to match your theme */
 }
 
 .about-card-content ul {
@@ -550,7 +578,7 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-  color: #4a5568;
+  color: #cbd5e1; /* Lighter gray for better contrast */
 }
 
 .about-card-content li i {
@@ -560,35 +588,6 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
-    background: white;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    padding: 2rem 0;
-  }
-  
-  .nav-menu.active {
-    left: 0;
-  }
-  
-  .nav-toggle {
-    display: flex;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
   .about-content {
     grid-template-columns: 1fr;
   }
@@ -596,9 +595,11 @@ h1, h2, h3, h4, h5, h6, .main-heading, .section-title {
   .about-stats {
     grid-template-columns: 1fr;
   }
+  
+  .section-title {
+    font-size: 2rem;
+  }
 }
-
-/* Updated Timeline CSS - Add to your App.css */
 
 /* Timeline Section */
 .timeline {
